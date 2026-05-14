@@ -23,6 +23,10 @@ function App() {
     localStorage.setItem("notes", JSON.stringify( [...notes, currentNote]))
   }
 
+  const deleteNote = (title) => {
+    notes = notes.filter(item => item.title !== title)
+  }
+
   const handleChange = (e) => {
     setcurrentNote({ ...currentNote, [e.target.name]: e.target.value })
   }
@@ -48,7 +52,7 @@ function App() {
         <h2>Your Notes</h2>
         <div class='container'>
           {notes && notes.map(note => {
-            return <Card key={note.title} title={note.title} desc={note.desc} />
+            return <Card key={note.title} deleteNote={deleteNote} title={note.title} desc={note.desc} />
           })}
         </div>
       </section>
