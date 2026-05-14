@@ -52,6 +52,7 @@ textarea{
   padding: 12px;
   margin: 12px;
   border-radius: 12px;
+  position: relative;
 }
 
 .card .title{
@@ -72,4 +73,10 @@ textarea{
   align-items: center;
   justify-content: center;
   max-width: 50vw;
+}
+
+.del{
+  position: absolute;
+  right: 5px;
+  cursor: pointer;
 }
