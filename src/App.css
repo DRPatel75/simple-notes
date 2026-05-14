@@ -44,8 +44,8 @@ textarea{
 }
 
 .card{
-  width: 233px;
-  height: 233px;
+  width: 133px;
+  height: 133px;
   background-color: rgb(54, 43, 105);
   color: white;
   font-weight: bold;
@@ -57,4 +57,19 @@ textarea{
 .card .title{
   text-align: center;
   font-size: 22px;
+}
+
+.noteSection{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.container{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  max-width: 50vw;
 }

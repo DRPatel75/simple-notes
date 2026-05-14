@@ -35,14 +35,13 @@ function App() {
           <button>Submit</button>
         </form>
       </main>
-      <section>
+      <section className='noteSection'>
         <h2>Your Notes</h2>
         <div class='container'>
           {notes && notes.map(note => {
             return <Card title={note.title} desc={note.desc} />
           })}
         </div>
-
       </section>
     </>
   )
