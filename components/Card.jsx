@@ -2,7 +2,10 @@ import React from 'react'
 
 const Card = ({title, desc}) => {
   return (
-    <div>Card title is {title} and desc is {desc}</div>
+    <div className='card'>
+        <div className="title">{title}</div>
+        <div className="desc">{desc}</div>
+    </div>
   )
 }
 
