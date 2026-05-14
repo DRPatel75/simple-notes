@@ -31,3 +31,13 @@ form{
 h1, h2{
   text-align: center;
 }
+
+input[type='text']{
+  width: 30vw;
+  height: 24px;
+}
+
+textarea{
+  width: 30vw;
+  height: 122px;
+}
