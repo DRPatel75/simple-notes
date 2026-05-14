@@ -1,10 +1,10 @@
 import React from 'react'
 import { MdDelete } from "react-icons/md";
 
-const Card = ({title, desc}) => {
+const Card = ({title, desc, deleteNote}) => {
   return (
     <div className='card'>
-      <div className="del">
+      <div className="del" onClick={()=> {deleteNote(title)}}>
         <MdDelete />
       </div>
         <div className="title">{title}</div>

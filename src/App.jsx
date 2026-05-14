@@ -24,7 +24,8 @@ function App() {
   }
 
   const deleteNote = (title) => {
-    notes = notes.filter(item => item.title !== title)
+    setNotes(notes = notes.filter(item => item.title != title))
+    localStorage.setItem("notes", JSON.stringify( notes.filter(item => item.title != title)))
   }
 
   const handleChange = (e) => {
@@ -54,6 +55,7 @@ function App() {
           {notes && notes.map(note => {
             return <Card key={note.title} deleteNote={deleteNote} title={note.title} desc={note.desc} />
           })}
+          {notes.length == 0 && <div>Add a note to continue</div>}
         </div>
       </section>
     </>
