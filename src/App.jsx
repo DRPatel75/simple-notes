@@ -1,27 +1,43 @@
 import './App.css'
 import Navbar from '../components/Navbar'
+import { useState } from 'react'
 
 function App() {
 
+  const [notes, setNotes] = useState([])
+  const [currentNote, setcurrentNote] = useState({ title: "", desc: "" })
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    setNotes([...notes, currentNote])
+  }
+
+  const handleChange = (e) => {
+    setcurrentNote({ ...currentNote, [e.target.name]: e.target.value })
+  }
+
   return (
     <>
-      <Navbar/>
+      <Navbar />
       <main>
         <h1>Create your note</h1>
-        <form action="">
+        <form action="" onSubmit={handleSubmit}>
           <div>
             <label htmlFor="title">Title</label>
-            <input type="text" name="title" id="title" />
+            <input value={currentNote.title} onChange={handleChange} type="text" name="title" id="title" />
           </div>
           <div>
             <label htmlFor="desc">Description</label>
-            <textarea name="desc" id="desc"></textarea>
+            <textarea name="desc" id="desc" onChange={handleChange} value={(currentNote.desc)}></textarea>
           </div>
           <button>Submit</button>
         </form>
       </main>
       <section>
         <h2>Your Notes</h2>
+        {notes && notes.map(note => {
+          return <div>{note.title}</div>
+        })}
       </section>
     </>
   )
