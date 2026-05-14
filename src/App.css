@@ -1,0 +1,33 @@
+nav{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: antiquewhite;
+  height: 43px;
+}
+
+nav ul li{
+  list-style-type: none;
+}
+
+nav ul{
+  display: flex;
+  gap: 23px;
+}
+
+.logo{
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+label{
+  display: block;
+}
+
+form{
+  text-align: center;
+}
+
+h1, h2{
+  text-align: center;
+}
