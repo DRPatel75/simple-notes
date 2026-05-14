@@ -2,7 +2,8 @@ nav{
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: antiquewhite;
+  background-color: rgb(148, 54, 224);
+  color: white;
   height: 43px;
 }
 
@@ -40,4 +41,20 @@ input[type='text']{
 textarea{
   width: 30vw;
   height: 122px;
+}
+
+.card{
+  width: 233px;
+  height: 233px;
+  background-color: rgb(54, 43, 105);
+  color: white;
+  font-weight: bold;
+  padding: 12px;
+  margin: 12px;
+  border-radius: 12px;
+}
+
+.card .title{
+  text-align: center;
+  font-size: 22px;
 }
