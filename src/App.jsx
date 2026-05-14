@@ -37,7 +37,7 @@ function App() {
       </main>
       <section>
         <h2>Your Notes</h2>
-        <div>
+        <div class='container'>
           {notes && notes.map(note => {
             return <Card title={note.title} desc={note.desc} />
           })}
