@@ -1,6 +1,6 @@
 import './App.css'
 import Navbar from '../components/Navbar'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Card from '../components/Card'
 
 function App() {
@@ -8,10 +8,19 @@ function App() {
   const [notes, setNotes] = useState([])
   const [currentNote, setcurrentNote] = useState({ title: "", desc: "" })
 
+  useEffect(()=>{
+    console.log("I am use Effect")
+    let localNotes = localStorage.getItem("notes")
+    if (localNotes){
+      setNotes(JSON.parse(localNotes))
+    }
+  }, [])
+
   const handleSubmit = (e) => {
     e.preventDefault()
     setNotes([...notes, currentNote])
     setcurrentNote({ title: "", dec: "" })
+    localStorage.setItem("notes", JSON.stringify( [...notes, currentNote]))
   }
 
   const handleChange = (e) => {
@@ -39,7 +48,7 @@ function App() {
         <h2>Your Notes</h2>
         <div class='container'>
           {notes && notes.map(note => {
-            return <Card title={note.title} desc={note.desc} />
+            return <Card key={note.title} title={note.title} desc={note.desc} />
           })}
         </div>
       </section>
