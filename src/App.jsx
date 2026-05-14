@@ -1,6 +1,7 @@
 import './App.css'
 import Navbar from '../components/Navbar'
 import { useState } from 'react'
+import Card from '../components/Card'
 
 function App() {
 
@@ -10,6 +11,7 @@ function App() {
   const handleSubmit = (e) => {
     e.preventDefault()
     setNotes([...notes, currentNote])
+    setcurrentNote({ title: "", dec: "" })
   }
 
   const handleChange = (e) => {
@@ -21,7 +23,7 @@ function App() {
       <Navbar />
       <main>
         <h1>Create your note</h1>
-        <form action="" onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit}>
           <div>
             <label htmlFor="title">Title</label>
             <input value={currentNote.title} onChange={handleChange} type="text" name="title" id="title" />
@@ -35,9 +37,12 @@ function App() {
       </main>
       <section>
         <h2>Your Notes</h2>
-        {notes && notes.map(note => {
-          return <Card title={note.title} desc={note.desc}/>
-        })}
+        <div>
+          {notes && notes.map(note => {
+            return <Card title={note.title} desc={note.desc} />
+          })}
+        </div>
+
       </section>
     </>
   )
